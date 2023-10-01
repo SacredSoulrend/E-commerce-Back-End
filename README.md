@@ -22,7 +22,7 @@ In bash: npm install<br>
 3. Login to your mysql using the command line/bash.<br>
 In bash: mysql -u [username] -p;
 
-4. Set up your database by creating a .env file in the project root directory. Add your MySQL database configuration as follows:<br>
+4. Set up your database by creating a .env file in the project root directory. Add your sequelize database configuration as follows:<br>
 
 DB_NAME='ecommerce_db'<br>
 DB_USER='your-database-username'<br>
