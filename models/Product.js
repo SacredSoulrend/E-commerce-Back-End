@@ -14,35 +14,35 @@ Product.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true, // Auto-incrementing primary key
     },
     product_name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false, // Product name is required
     },
     price: {
       type: DataTypes.DECIMAL,
       allowNull: false,
       validate: {
-      isDecimal: true
-      }
+        isDecimal: true, // Price must be a decimal number
+      },
     },
     stock: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 10,
+      defaultValue: 10, // Default stock value is 10
       validate: {
-      isNumeric: true
-      }
+        isNumeric: true, // Stock must be a numeric value
+      },
     },
     category_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'category',
-        key: 'id',
-        unique: false
-      }
-    }
+        model: 'category', // References the 'category' model
+        key: 'id', // References the 'id' column in the 'category' model
+        unique: false, // Multiple products can belong to the same category
+      },
+    },
   },
   {
     sequelize,

@@ -6,6 +6,7 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 // get all products
 router.get('/', async (req, res) => {
   try {
+    // Find all products and include associated Category and Tag data
     const productsData = await Product.findAll({
       include: [
         { model: Category },
@@ -22,6 +23,7 @@ router.get('/', async (req, res) => {
 // get one product
 router.get('/:id', async (req, res) => {
   try {
+    // Find a single product by its ID and include associated Category and Tag data
     const productData = await Product.findByPk(req.params.id, {
       include: [
         { model: Category },
@@ -52,6 +54,7 @@ router.post('/', async (req, res) => {
     }
   */
   try {
+    // Create a new product using the request body
     const newProduct = await Product.create(req.body);
 
     if (req.body.tagIds && req.body.tagIds.length) {
@@ -75,6 +78,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   // update product data
   try {
+    // Update a product by its ID with the provided request body
     const updatedProduct = await Product.update(req.body, {
       where: {
         id: req.params.id,
@@ -113,9 +117,10 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+// delete one product by its `id` value
 router.delete('/:id', async (req, res) => {
-  // delete one product by its `id` value
   try {
+    // Delete one product by its ID
     const deletedProduct = await Product.destroy({
       where: {
         id: req.params.id,
