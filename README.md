@@ -40,7 +40,7 @@ In bash: node server.js
 ## Usage
 Here is my video example on how to use the application:
 
-https://drive.google.com/file/d/1_2afvsQx8LN-hviBkyJ4F-KJiMZ7hg-s/view
+https://drive.google.com/file/d/1rj4HTLFP3LOZSqskkbb5oRR8vzFXyyUm/view
 
 ## License
 ![License](https://img.shields.io/badge/license-MIT-yellow)
